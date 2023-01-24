@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=64
+HISTFILESIZE=128
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
@@ -76,16 +76,20 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias e='ex'
+#alias ll='ls -alF'
+#alias la='ls -A'
+#alias l='ls -CF'
 alias scmi='mit-scheme'
-alias vi='vim -u /home/bdg/.virc'
+alias e='vim -u /home/bdg/.virc'
+alias e0='ed'
+alias e1='ex -u /home/bdg/.exrc'
+alias e2='ex'
+alias e3='vim'
+alias e4='vis'
 #alias vi='vim -u NONE'
 alias open='xdg-open'
 # ranger always changed directory
-alias ranger='. ranger'
+alias fm='. ranger'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -113,8 +117,8 @@ fi
 
 bind TAB:menu-complete
 
-export PATH=$PATH:/home/bdg/Templates:/home/bdg/Documents/void/work/scripts
-export PS1="i: "
+export PATH=$PATH:/home/bdg/templates:/home/bdg/documents/void/work/scripts:
+export PS1="# "
 #export PS1=`printf "\033[32m$ "`
 #if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
 #  exec tmux

@@ -1,29 +1,31 @@
 call plug#begin()
 Plug 'morhetz/gruvbox'
-"Plug 'vimsence/vimsence'
+Plug 'vimsence/vimsence'
 "Plug 'vbe0201/vimdiscord'
 " Plug 'powerline/powerline'
+Plug 'kovisoft/slimv'
 Plug 'ajmwagar/vim-deus'
 Plug 'chriskempson/base16-vim'
 Plug 'fladson/vim-kitty'
-"Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'tribela/vim-transparent'
+Plug 'tribela/vim-transparent'
 Plug 'honza/vim-snippets'
 Plug 'sirver/ultisnips'
 "Plug 'felipec/notmuch-vim'
 Plug 'itchyny/calendar.vim'
 call plug#end()
-set termguicolors
+""set termguicolors
 
+let &t_ut = ''
 let &t_8f = "\<Esc>[38;2;%1u;%1u;%1um"
 let &t_8b = "\<Esc>[48;2;%1u;%1u;%1um"
 "syntax off
 syntax enable
-"colo deus
+colo deus
 "colo gruvbox
 "colo base16-phd
 "colo base16-classic-light
@@ -47,9 +49,9 @@ set number
 "set nonumber
 set nu rnu
 set showcmd
-set tabstop=8
-set shiftwidth=8
-"set expandtab
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 set showmode
 set autoindent
@@ -70,7 +72,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" let g:vimsence_discord_flatpak=1
+"let g:vimsence_discord_flatpak=1
 
 "let g:airline_experimental = 1
 let g:airline_mode_map = {

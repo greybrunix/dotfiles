@@ -1,0 +1,64 @@
+general
+{
+	colors = true
+	color_good = "#a3be8c"
+	color_degraded = "#ebcb8b"
+	color_bad = "#bf616a"
+	interval = 1
+	separator = "|"
+}
+
+order += "disk /"
+order += "cpu_usage"
+order += "wireless _first_"
+order += "battery 0"
+order += "memory"
+order += "tztime utc"
+order += "volume master"
+
+
+disk "/"
+{
+	format = "/: %percentage_used"
+}
+
+cpu_usage
+{
+	format = "CPU: %usage"
+	degraded_threshold = 90
+	max_threshold = 95
+}
+
+wireless _first_
+{
+	format_up = "WLS: (%quality at %ssid) %ip"
+	format_down = "WLS: down"
+}
+
+battery 0
+{
+	format = "BAT0: %percentage"
+	last_full_capacity = true
+	threshold_type = percentage
+	low_threshold = 20
+}
+
+memory
+{
+	memory_used_method = classical
+	format = "Memory: %used/%total"
+}
+
+tztime utc
+{
+	format = "date: %Y-%m-%d | time: %H:%M %Z"
+	timezone = "Etc/UTC"
+}
+
+volume master
+{
+	format = "♪: %volume"
+	format_muted = "♪: muted (%volume)"
+	mixer = "Master"
+	mixer_idx = 0
+}
