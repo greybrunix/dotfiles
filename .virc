@@ -3,6 +3,7 @@ set compatible
 set nowrap
 set nonu
 syntax off
+set background=light
 set textwidth=74
 set cc=74
 
